@@ -37,10 +37,10 @@ train_data = pd.DataFrame(scaler_features.transform(train_data.values), columns=
 
 ## Results
 As mentioned above, if we only look at one or two features we can quickly get a MSE = 2. But with the feature engineering from above, this can greatly be reduced to consistently below MSE = 0.2!  
-I have tried different models with between two and five hidden layers, a hidden node count between 30 and 1000 and a range of epochs between 100 to 5000. Optmila results for my setup came with two hidden layers with 300 units each, and using relu activation function and 500 epochs with batch size 32. This gave a score = 0.15427, putting me in the 65th percentile in this competition.  
+I have tried different models with between two and five hidden layers, a hidden node count between 30 and 1000 and a range of epochs between 100 to 5000. Optimal results for my setup came with two hidden layers with 300 units each, and using relu activation function and 500 epochs with batch size 32. This gave a score = 0.15427, putting me in the 65th percentile in this competition.  
 ![score](https://user-images.githubusercontent.com/45593399/71048505-be71b280-213f-11ea-9ba1-78be8cf1c53e.PNG)  
 
-But by looking on the leaderboards on Kaggle it is reasonable to believe that more time spent on feature engineering, or using another statistical model(mentioned in improvements) could realisticly lower this MSE down to around 1.2-1.3 (25th percentile).  
+But by looking on the leaderboards on Kaggle it is reasonable to believe that more time spent on feature engineering, or using another statistical model(mentioned in improvements) could realisticly lower this MSE down to around 0.12-0.13 (25th percentile).  
 
 ## Improvements
 The top scorers has had great success with the lasso regression, which does a good job of avoiding overfitting. Other regression models which seems to work well are ridge regression, forest regression and xgboost regression. User Luca Basanisi has a [great notebook](https://www.kaggle.com/lucabasa/houseprice-end-to-end-project/notebook) on Kaggle where he goes much more in depth on the different models and how to better analyze and preprocess the data.  
